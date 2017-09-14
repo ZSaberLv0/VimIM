@@ -145,7 +145,7 @@ function! s:vimim_dictionary_keycodes()
     let s:keycodes = {}
     let cloud = ' google sogou baidu qq mycloud '
     for key in split( cloud . ' pinyin ')
-        let s:keycodes[key] = "['a-z0-9]"
+        let s:keycodes[key] = "[a-z0-9]"
     endfor
     for key in split('array30 phonetic')
         let s:keycodes[key] = "[.,a-z0-9;/]"
