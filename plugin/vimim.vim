@@ -2787,6 +2787,11 @@ function! s:vimim_start()
         let key = nr2char(30)
     endif
     let b:keymap_name=s:ui.root.':'.s:ui.im
+    augroup VimIMStart_augroup
+        autocmd!
+        autocmd User VimIMStart let _dummy=0
+        doautocmd User VimIMStart
+    augroup END
     sil!exe 'sil!return "' . key . '"'
 endfunction
 
@@ -2798,6 +2803,11 @@ function! s:vimim_stop()
     let s:ui.frontends = copy(s:frontends)
     sil!call s:vimim_restore_vimrc()
     sil!call s:vimim_super_reset()
+    augroup VimIMStop_augroup
+        autocmd!
+        autocmd User VimIMStop let _dummy=0
+        doautocmd User VimIMStop
+    augroup END
     sil!exe 'sil!return "' . key . '"'
 endfunction
 
