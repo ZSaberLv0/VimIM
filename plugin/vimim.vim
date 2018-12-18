@@ -2325,7 +2325,7 @@ function! s:vimim_check_http_executable()
     if empty(s:http_exe)
         if has('python')
             let s:http_exe = 'Python2 Interface to Vim' " +python/dyn
-        elseif has('python3') && &relativenumber
+        elseif has('python3')
             let s:http_exe = 'Python3 Interface to Vim' " +python3/dyn
         endif
     endif
