@@ -1,5 +1,5 @@
-if !exists('g:VimIM_autodisable_ycm') || g:VimIM_autodisable_ycm != 0
-    return
+if exists('g:VimIM_autodisable_ycm') && g:VimIM_autodisable_ycm == 0
+    finish
 endif
 
 let s:enableSaved=0

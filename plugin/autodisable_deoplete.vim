@@ -1,5 +1,5 @@
-if !exists('g:VimIM_autodisable_deoplete') || g:VimIM_autodisable_deoplete != 0
-    return
+if exists('g:VimIM_autodisable_deoplete') && g:VimIM_autodisable_deoplete == 0
+    finish
 endif
 
 let s:enableSaved=0
