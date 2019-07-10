@@ -2,15 +2,13 @@ if exists('g:VimIM_autodisable_deoplete') && g:VimIM_autodisable_deoplete == 0
     finish
 endif
 
-let s:enableSaved=0
 function! s:disable()
     if exists('*deoplete#disable')
-        let s:enableSaved = deoplete#is_enabled()
         call deoplete#disable()
     endif
 endfunction
 function! s:enable()
-    if s:enableSaved && exists('*deoplete#enable')
+    if exists('*deoplete#enable')
         call deoplete#enable()
     endif
 endfunction
