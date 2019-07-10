@@ -5,10 +5,12 @@ endif
 function! s:disable()
     if exists(':CocDisable')
         CocDisable
+        call coc#config('suggest.autoTrigger', 'none')
     endif
 endfunction
 function! s:enable()
     if exists(':CocEnable')
+        call coc#config('suggest.autoTrigger', 'always')
         CocEnable
     endif
 endfunction
